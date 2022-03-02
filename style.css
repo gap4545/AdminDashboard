@@ -16,6 +16,25 @@ a {
     color: white;
 }
 
+.actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.actions > button {
+    width: max-content;
+    height: max-content;
+}
+
+.announcements-container {
+    background-color: darkblue;
+    grid-area: announcements-container;
+    display: grid;
+    grid-template-rows: min-content 1fr;
+}
+
 .bell {
     grid-area: bell;
 }
@@ -39,7 +58,16 @@ a {
 
 .content-container {
     background-color: gray;
+    padding: 30px 20px;
     grid-area: content-container;
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "project-container announcements-container"
+    "project-container trending-container";
+    column-gap: 15px;
+    row-gap: 25px;
 }
 
 .greeting {
@@ -82,6 +110,19 @@ a {
     grid-template-rows: repeat(6, max-content);
 }
 
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 350px));
+    gap: 20px;
+}
+
+.project-container {
+    background-color: coral;
+    grid-area: project-container;
+    display: grid;
+    grid-template-rows: min-content 6fr;
+}
+
 #search {
     height: 30px;
 }
@@ -112,6 +153,18 @@ a {
     padding: 20px;
 }
 
+.title {
+    font-size: 22px;
+    color: white;
+}
+
+.trending-container {
+    background-color: darkgoldenrod;
+    grid-area: trending-container;
+    display: grid;
+    grid-template-rows: min-content 1fr;
+}
+
 ul {
     list-style: none;
     gap: 15px;
@@ -122,4 +175,17 @@ ul {
     grid-template-columns: 1fr 2fr 4fr;
     align-items: center;
     justify-items: center;
+    grid-template-areas: "bell user-pic username";
+}
+
+.user-pic {
+    grid-area: user-pic;
+}
+
+.username {
+    grid-area: username;
+}
+
+.projects > div {
+    background-color: greenyellow;
 }
