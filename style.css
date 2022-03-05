@@ -5,6 +5,8 @@
 }
 
 .img-placeholder {
+    grid-area: img-place;
+    align-self: center;
     width: 15px;
     height: 15px;
     background-color: black;
@@ -28,15 +30,31 @@ a {
     height: max-content;
 }
 
+.announcement > div {
+    color: rgb(119, 119, 119);
+}
+
+.announcement > h4 {
+    margin-bottom: 5px;
+    padding-top: 3px;
+}
+
 .announcements {
-    background-color: indianred;
-    display: grid;
-    grid-template-rows: repeat(3, minmax(75px, 1fr));
+    background-color: white;
     padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.announcements > div:nth-child(2){
+    border-top: 3px solid lightgray;
+    border-bottom: 3px solid lightgray;
+    padding: 20px 0px;
 }
 
 .announcements-container {
-    background-color: darkblue;
     grid-area: announcements-container;
     display: grid;
     grid-template-rows: min-content 1fr;
@@ -75,6 +93,10 @@ a {
     "project-container trending-container";
     column-gap: 15px;
     row-gap: 25px;
+}
+
+.content-container > div {
+    row-gap: 8px;
 }
 
 .greeting {
@@ -120,6 +142,7 @@ a {
 .projects {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: max-content;
     gap: 20px;
 }
 
@@ -127,6 +150,50 @@ a {
     background-color: white;
     width: 100%;
     padding: 25px;
+    border-left: 10px solid #701a75;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    gap: 4px;
+    transition: 0.5s;
+}
+
+.project-item:hover {
+    transform: scale(1.02);
+    box-shadow: 6px 4px 5px #f5d0fe;
+}
+
+.project-item > h4 {
+    font-size: 1.15em;
+}
+
+.project-item > div:first-of-type {
+    color: rgb(119, 119, 119);
+}
+
+.project-buttons {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.project-buttons > button {
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.project-buttons > button > svg {
+    min-height: 27px;
+    min-width: 27px;
+    height: 100%;
+    width: auto;
+    transition: 0.25s;
+}
+
+.project-buttons > button > svg:hover {
+    transform: scale(1.2);
 }
 
 .project-container {
@@ -170,22 +237,26 @@ a {
     color: white;
 }
 
+.trend {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 
+    "img-place div"
+    "img-place div";
+}
+
 .trending-container {
-    background-color: darkgoldenrod;
     grid-area: trending-container;
     display: grid;
     grid-template-rows: min-content 1fr;
 }
 
 .trendings {
-    background-color: indigo;
+    background-color: white;
     display: grid;
     grid-template-rows: repeat(4, 1fr);
     padding: 25px;
-}
-
-.trendings > div {
-    color: red;
 }
 
 ul {
