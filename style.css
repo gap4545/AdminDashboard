@@ -9,13 +9,13 @@
 /* Start of announcement styling */
 .announcement > div {
     color: rgb(119, 119, 119);
-    font-size: 17px;
+    font-size: 1.1vw;
 }
 
 .announcement > h4 {
     margin-bottom: 5px;
     padding-top: 3px;
-    font-size: 20px;
+    font-size: 1.2vw;
     font-weight: bold;
 }
 
@@ -23,21 +23,25 @@
     background-color: white;
     padding: 25px;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: minmax(300px, 20vw);
+    grid-template-rows: 1fr 1fr 1fr;
+
 }
 
 .announcements > div:nth-child(2){
     border-top: 3px solid lightgray;
     border-bottom: 3px solid lightgray;
-    padding: 20px 0px;
+    padding: 10px 0px;
+    margin: 10px 0px;
 }
 
 .announcements-container {
     grid-area: announcements-container;
     display: grid;
-    grid-template-rows: min-content 1fr;
+    grid-template-rows: min-content minmax(max-content, 400px);
+    grid-template-columns: minmax(200px, 20vw);
+    justify-self: end;
 }
 /* End of announcements styling */
 /* Start of container styling */
@@ -320,6 +324,10 @@ ul {
     font-size: 30px;
     height: min-content;
     color: #F9E0D9;
+}
+
+.sidebar-head > svg {
+    max-width: 2em;
 }
 /* End of sidebar styling */
 /* Start of trending styling */
